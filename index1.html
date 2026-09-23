@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>得天露營體驗區 TRICK or TREAT不給糖就搗蛋</title>
+    <title>得天露營體驗區－TRICKorTREAT不給糖就搗蛋</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -334,7 +334,7 @@
 
     <!-- 貞子 Jumpscare 實體 (替換為真實恐怖圖片) -->
     <div id="sadako-jumpscare" class="fixed inset-0 z-[10000] bg-black hidden flex-col justify-center items-center pointer-events-none">
-        <img src= "image_3f28bc.jpg" alt="Jumpscare" class="w-full h-full object-cover">
+        <img src= "image_TERR.png" alt="Jumpscare" class="w-full h-full object-cover">
     </div>
 
     <!-- ⚠️ 音效全面升級：長版電影級淒厲尖叫聲與沉重心跳聲 -->
@@ -975,11 +975,16 @@
            Game 3: 鬼才知道 
            ========================================================================= */
         const DEF_G3_Q = [
-            { category: "萬聖節", q: "南瓜燈最早是用什麼雕刻的？", options: ["南瓜", "馬鈴薯或蘿蔔", "西瓜", "蘋果"], ans: 1 },
+            { category: "萬聖節", q: "南瓜燈最早是用什麼雕刻的？", options: ["百香果或番茄", "蘋果或梨子", "西瓜或哈密瓜", "馬鈴薯或蘿蔔"], ans: 3 },
             { category: "萬聖節", q: "萬聖節是哪一天？", options: ["10/31", "11/1", "11/31", "10/1"], ans: 0 },
-            { category: "老爺題", q: "礁溪老爺酒店位於哪一個縣市？", options: ["花蓮縣", "新北市", "宜蘭縣", "台東縣"], ans: 2 },
+            { category: "老爺題", q: "礁溪老爺酒店位於哪一個縣市？", options: ["花蓮縣", "基隆市", "宜蘭縣", "台東縣"], ans: 2 },
             { category: "萬聖節", q: "傳說中，吸血鬼最害怕什麼？", options: ["蘋果", "大蒜", "十字架與大蒜", "南瓜"], ans: 2 },
             { category: "老爺題", q: "礁溪溫泉的泉質主要屬於？", options: ["硫磺泉", "碳酸氫鈉泉", "食鹽泉", "泥漿泉"], ans: 1 },
+            { category: "老爺題", q: "礁溪老爺得天露營區總共有幾台露營車？", options: ["8 台", "10 台", "12台", "20 台"], ans: 3 },
+            { category: "老爺題", q: "營火話匣子是幾點的活動？", options: ["20:00-21:00", "20:15-21:00", "21:00-22:00", "21:15-22:00"], ans: 1 },
+            { category: "萬聖節", q: "「德古拉 Dracula」通常指的是哪種怪物？", options: ["狼人", "吸血鬼", "女巫", "惡魔"], ans: 1 },
+            { category: "萬聖節", q: "下列哪一個「不是」常見的萬聖節裝飾？", options: ["蜘蛛網", "骷髏頭", "薑餅人", "南瓜燈"], ans: 2 },
+            { category: "萬聖節", q: "黑貓經常和哪一種萬聖節角色一起出現？", options: ["木乃伊", "科學怪人", "魔法阿罵", "女巫"], ans: 3 },
             { category: "萬聖節", q: "墨西哥紀念逝者的節日叫什麼？", options: ["亡靈節", "感恩節", "復活節", "清明節"], ans: 0 }
         ];
         let g3Questions = [], g3Cards = [], g3ToDraw = 2, g3Selected = [], g3Pending = [], g3Wrong = false, g3Correct = 0, isG3Anim = false;
