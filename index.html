@@ -1203,7 +1203,7 @@
                 if (audio && audioUnlocked) {
                     audio.currentTime = 0;
                     audio.volume = 1.0; // 尖叫音量全開
-                    audio.play().catch(e => { console.log('發聲被阻擋', e); });
+                    audio.play().catch(e => { console.log('發聲被阻擋', eF); });
                 }
             }
 
@@ -1220,7 +1220,7 @@
 
         function scheduleSadako() {
             // 在 8 秒 ~ 15 秒之間隨機觸發一次，頻率極高
-            const nextTime = Math.random() * 7000 + 8000;
+            const nextTime = Math.random() * 15000 + 9000;
             setTimeout(triggerSadako, nextTime);
         }
 
