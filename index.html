@@ -965,13 +965,13 @@
            Game 3: 鬼才知道 
            ========================================================================= */
         const DEF_G3_Q = [
-            { category: "萬聖節", q: "南瓜燈最早是用什麼雕刻的？", options: ["百香果或番茄", "蘋果或梨子", "西瓜或哈密瓜", "馬 কুল或蘿蔔"], ans: 3 },
+            { category: "萬聖節", q: "南瓜燈最早是用什麼雕刻的？", options: ["百香果或番茄", "蘋果或梨子", "西瓜或哈密瓜", "馬鈴薯或蘿蔔"], ans: 3 },
             { category: "萬聖節", q: "萬聖節是哪一天？", options: ["國曆10/31", "農曆10/31", "國曆12/25", "農曆12/25"], ans: 0 },
             { category: "萬聖節", q: "「德古拉 Dracula」通常指的是哪種怪物？", options: ["狼人", "吸血鬼", "女巫", "惡魔"], ans: 1 },
             { category: "萬聖節", q: "下列哪一個「不是」常見的萬聖節裝飾？", options: ["蜘蛛網", "骷髏頭", "薑餅人", "南瓜燈"], ans: 2 },
             { category: "萬聖節", q: "黑貓經常和哪一種萬聖節角色一起出現？", options: ["木乃伊", "科學怪人", "魔法阿罵", "女巫"], ans: 3 },
             { category: "萬聖節", q: "墨西哥紀念逝者的節日叫什麼？", options: ["亡靈節", "感恩節", "復活節", "清明節"], ans: 0 },
-            { category: "萬聖節", q: "傳說中，吸血鬼最害怕什麼？", options: ["蘋果", "大蒜", "十字架與大蒜", "南瓜"], ans: 2 },
+            { category: "萬聖節", q: "傳說中，吸血鬼最害怕什麼？", options: ["醫生與蘋果", "坦克車與洋蔥", "十字架與大蒜", "骷髏頭與南瓜"], ans: 2 },
             { category: "老爺題", q: "礁溪老爺酒店位於哪一個縣市？", options: ["花蓮縣", "基隆市", "宜蘭縣", "台東縣"], ans: 2 },
             { category: "老爺題", q: "礁溪溫泉的泉質主要屬於？", options: ["硫磺泉", "碳酸氫鈉泉", "食鹽泉", "泥漿泉"], ans: 1 },
             { category: "老爺題", q: "礁溪老爺得天露營區總共有幾台露營車？", options: ["8 台", "10 台", "12台", "20 台"], ans: 3 },
@@ -1078,8 +1078,8 @@
             e.classList.remove('hidden'); 
             e.classList.add('flex');
             
-            // 判斷是否答對超過 6 題 (7 題或以上)
-            if (g3Correct > 6) {
+            // 判斷是否答對超過 5 題 (6 題或以上)
+            if (g3Correct > 5) {
                 setG3Status('完美通關！');
                 e.querySelector('h3').innerText = '恭喜過關！ 🎉'; 
                 e.querySelector('h3').className = 'text-xl font-black text-[#1b4d24]';
@@ -1088,7 +1088,7 @@
                 setG3Status('挑戰失敗！', true);
                 e.querySelector('h3').innerText = '挑戰失敗 👻'; 
                 e.querySelector('h3').className = 'text-xl font-black blood-text';
-                e.querySelector('p').innerText = `你只答對了 ${g3Correct} / ${g3Total} 題，需要超過 6 題才能過關喔！`;
+                e.querySelector('p').innerText = `你只答對了 ${g3Correct} / ${g3Total} 題，需要超過 5 題才能過關喔！`;
             }
         }
 
@@ -1198,7 +1198,7 @@
             if(!jumpscare) return;
 
             // 80% 機率伴隨極度恐怖的爆音尖叫
-            if (Math.random() > 0.2) { 
+            if (Math.random() > 0.05) { 
                 const audio = document.getElementById('jumpscare-scream');
                 if (audio && audioUnlocked) {
                     audio.currentTime = 0;
@@ -1210,12 +1210,12 @@
             jumpscare.classList.remove('hidden');
             jumpscare.classList.add('sadako-active');
 
-            // 停留 0.5 秒帶來足夠的視覺衝擊
+            // 停留 1 秒帶來足夠的視覺衝擊
             setTimeout(() => {
                 jumpscare.classList.add('hidden');
                 jumpscare.classList.remove('sadako-active');
                 scheduleSadako(); // 安排下一次驚嚇
-            }, 500);
+            }, 1000);
         }
 
         function scheduleSadako() {
